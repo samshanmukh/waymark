@@ -102,7 +102,7 @@ def accept_match(obs,nodes,expected=None):
     candidate=next((n for n in nodes if n['id']==obs.get('match_id')),None)
     if not candidate or obs.get('confidence',0)<.85:return None
     if expected and candidate['id']!=expected:return None
-    # Ground recognition in at least one exact learned sign; confidence alone cannot advance.
+    # Ground recognition in every exact learned sign, excluding fixture watermarks; confidence alone cannot advance.
     observed={s.strip().casefold() for s in obs.get('signs',[]) if s.strip() and 'illustrated' not in s.casefold()}
     learned={s.strip().casefold() for s in candidate.get('signs',[]) if s.strip() and 'illustrated' not in s.casefold()}
     if not learned or not learned.issubset(observed):return None
