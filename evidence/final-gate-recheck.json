@@ -1,0 +1,55 @@
+{
+  "final_gate": "All learned signage required, excluding fixture watermarks",
+  "fixtures": "Original illustrations; second view is a crop; hardware untested",
+  "results": [
+    {
+      "fixture": "lifts",
+      "attempt": 1,
+      "error": "Meta inference request failed (HTTP 503). Check account access or retry."
+    },
+    {
+      "fixture": "lifts",
+      "attempt": 2,
+      "error": "Meta inference request failed (HTTP 503). Check account access or retry."
+    },
+    {
+      "fixture": "lifts2",
+      "attempt": 1,
+      "current": "n1",
+      "observation": {
+        "name": "LIFTS EAST WING",
+        "signs": [
+          "LIFTS",
+          "EAST WING"
+        ],
+        "cues": [
+          "blue overhead sign with LIFTS EAST WING text",
+          "two grey double lift doors flanking central corridor",
+          "small dark blue marker in center background"
+        ],
+        "match_id": "n2",
+        "confidence": 0.98,
+        "reason": "Current image shows identical blue LIFTS EAST WING sign and twin lift doors as reference n2, with matching layout and colors",
+        "latency_s": 12.66,
+        "model": "accounts/fireworks/models/muse-spark-open",
+        "usage": {
+          "prompt_tokens": 5141,
+          "total_tokens": 5519,
+          "completion_tokens": 378,
+          "prompt_tokens_details": {
+            "cached_tokens": 0
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 272
+          },
+          "output_tokens_details": {
+            "reasoning_tokens": 272
+          }
+        },
+        "source": "Illustrated demo scene",
+        "observed_at": "17:52:58",
+        "decision": "confirm"
+      }
+    }
+  ]
+}
