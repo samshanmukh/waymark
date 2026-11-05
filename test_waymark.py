@@ -18,6 +18,7 @@ class Routes(unittest.TestCase):
   s.operate('block',{'id':'a'});self.assertEqual(s.STATE['route'],['n1','n3'])
  def test_confidence_cannot_bypass_signs(self):
   self.nodes();self.assertIsNone(s.accept_match({'match_id':'n2','confidence':1,'signs':[]},s.STATE['nodes'],'n2'))
+  self.assertIsNone(s.accept_match({'match_id':'n2','confidence':1,'signs':['LIFTS']},s.STATE['nodes'],'n2'))
  def test_wrong_node_cannot_advance(self):
   self.nodes();self.assertIsNone(s.accept_match({'match_id':'n3','confidence':1,'signs':['LOUNGE']},s.STATE['nodes'],'n2'))
  def test_unknown_node_rejected(self):
