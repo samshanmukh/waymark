@@ -2,7 +2,7 @@
 
 **Teach an indoor route once. Verify its landmarks on the way back.**
 
-Waymark turns operator-recorded indoor observations into an evidence-linked topological graph. Meta Muse Spark Open reads static visual landmarks and signage, then compares a new observation against learned reference images. A deterministic verifier holds the location unless the expected landmark has sufficient visual support, matching learned signage, and two distinct image observations.
+Waymark turns operator-recorded indoor observations into an evidence-linked topological graph. Meta Muse Spark Open reads static visual landmarks and signage, then compares a new observation against learned reference images. A deterministic verifier holds the location unless the expected landmark has sufficient visual support, all learned signage, and two distinct image observations.
 
 Built for the Meta Global AI Developer Hackathon, Indie Developer / Build for Your World, November 4, 2026. Intended direction: indoor spaces without reliable GPS, such as offices, event venues and airport interiors. No airport deployment or navigation accuracy is claimed.
 
@@ -40,7 +40,7 @@ The new Waymark workflow has not been tested with physical glasses: the hardware
 `Image / USB frame → Meta static-landmark observation → learned-reference comparison → deterministic evidence gate → route state → graph planner → evidence trail`
 
 - Meta reads signs, distinctive cues, candidate reference ID, uncalibrated match confidence and evidence rationale.
-- The local gate rejects an unknown candidate, a candidate other than the next checkpoint, confidence below 0.85, absent exact learned signage, repeated identical image, or a second image arriving more than 120 seconds after the first.
+- The local gate rejects an unknown candidate, a candidate other than the next checkpoint, confidence below 0.85, any missing exact learned signage (fixture watermarks excluded), repeated identical image, or a second image arriving more than 120 seconds after the first.
 - Uncertain evidence clears any pending confirmation. A first supported image creates a pending confirmation; a second distinct supported image advances one checkpoint.
 - Edges are operator-recorded traversal assertions, never inferred from image similarity. The graph uses unweighted shortest paths over open recorded links. Its layout is schematic, not a reconstructed floor plan.
 - A selected starting point is an explicit operator assertion, labeled as such in the trail.
