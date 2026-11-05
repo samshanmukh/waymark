@@ -1,0 +1,118 @@
+{
+  "scene_type": "Authored illustrations, second view is a crop; no physical glasses test",
+  "model": "Meta Muse Spark Open via Fireworks",
+  "results": [
+    {
+      "action": "teach",
+      "fixture": "lounge",
+      "observation": {
+        "name": "QUIET LOUNGE",
+        "signs": [
+          "QUIET LOUNGE",
+          "Room 204",
+          "WAYMARK / ILLUSTRATED INDOOR DEMO"
+        ],
+        "match_id": null,
+        "confidence": 0.0,
+        "reason": "No reference images provided to compare; visible signage identifies Quiet Lounge Room 204",
+        "decision": null,
+        "latency_s": 8.05,
+        "model": "accounts/fireworks/models/muse-spark-open"
+      },
+      "current": "n1",
+      "route": []
+    },
+    {
+      "action": "goal",
+      "fixture": null,
+      "observation": {
+        "name": "QUIET LOUNGE",
+        "signs": [
+          "QUIET LOUNGE",
+          "Room 204",
+          "WAYMARK / ILLUSTRATED INDOOR DEMO"
+        ],
+        "match_id": null,
+        "confidence": 0.0,
+        "reason": "No reference images provided to compare; visible signage identifies Quiet Lounge Room 204",
+        "decision": null,
+        "latency_s": 8.05,
+        "model": "accounts/fireworks/models/muse-spark-open"
+      },
+      "current": "n1",
+      "route": [
+        "n1",
+        "n2",
+        "n3"
+      ]
+    },
+    {
+      "action": "verify",
+      "fixture": "wrong",
+      "observation": {
+        "name": "LIFTS WEST WING",
+        "signs": [
+          "LIFTS",
+          "WEST WING"
+        ],
+        "match_id": null,
+        "confidence": 0.0,
+        "reason": "Current shows LIFTS WEST WING on brown sign; closest reference n2 is LIFTS EAST WING on blue sign - contradictory wing label rules out match",
+        "decision": "hold",
+        "latency_s": 9.16,
+        "model": "accounts/fireworks/models/muse-spark-open"
+      },
+      "current": "n1",
+      "route": [
+        "n1",
+        "n2",
+        "n3"
+      ]
+    },
+    {
+      "action": "verify",
+      "fixture": "lifts",
+      "observation": {
+        "name": "LIFTS EAST WING",
+        "signs": [
+          "LIFTS",
+          "EAST WING"
+        ],
+        "match_id": "n2",
+        "confidence": 0.99,
+        "reason": "Current image matches reference n2 in sign text, color, and lift door layout exactly",
+        "decision": "confirm",
+        "latency_s": 6.8,
+        "model": "accounts/fireworks/models/muse-spark-open"
+      },
+      "current": "n1",
+      "route": [
+        "n1",
+        "n2",
+        "n3"
+      ]
+    },
+    {
+      "action": "verify",
+      "fixture": "lifts2",
+      "observation": {
+        "name": "LIFTS EAST WING",
+        "signs": [
+          "LIFTS",
+          "EAST WING"
+        ],
+        "match_id": "n2",
+        "confidence": 1.0,
+        "reason": "Current image signage and lift door configuration exactly matches reference n2 East lifts",
+        "decision": "verified",
+        "latency_s": 7.67,
+        "model": "accounts/fireworks/models/muse-spark-open"
+      },
+      "current": "n2",
+      "route": [
+        "n2",
+        "n3"
+      ]
+    }
+  ]
+}
